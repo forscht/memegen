@@ -1,0 +1,16 @@
+{
+  "name": "memegen",
+  "version": "1.0.0",
+  "description": "Simple node api to replace face in picture",
+  "main": "app.js",
+  "author": "Darshan Patel <lazy14k@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "dependencies": {
+    "canvas": "^2.7.0"
+  }
+}
