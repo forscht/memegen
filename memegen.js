@@ -1,6 +1,7 @@
 const {
     createCanvas, loadImage,
 } = require('canvas')
+const cache = require('./cache')
 
 /**
  * Draw rounded image
@@ -36,7 +37,7 @@ const drawRoundedImage = (ctx, x, y, radius, size, image) => {
  */
 module.exports = async (baseURL, avatar, x, y, size) => {
 
-    const baseImage = await loadImage(baseURL)
+    const baseImage = await loadImage(await cache(baseURL))
 
     const canvas = createCanvas(baseImage.width, baseImage.height)
     const ctx = canvas.getContext('2d')
@@ -45,7 +46,7 @@ module.exports = async (baseURL, avatar, x, y, size) => {
     //
     // Edit only after this
     //
-    const avatarImage = await loadImage(avatar)
+    const avatarImage = await loadImage(await cache(avatar))
     // Draw avatar
     drawRoundedImage(ctx, x, y, size / 2, size, avatarImage)
 
